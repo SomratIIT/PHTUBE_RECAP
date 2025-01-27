@@ -36,11 +36,11 @@ card.innerHTML=
 <img src=${video.authors[0].profile_picture} class="w-[50px] h-[50px] rounded-full object-cover" />
   </div>
   <div>
-   <p>${video.title}</p>
+   <h2 class="font-bold">${video.title}</h2>
   <div class="flex gap-1 items-center">
-  <h2> ${video.authors[0].profile_name} </h2>
+  <p> ${video.authors[0].profile_name} </p> 
  
-  <img src="https://img.icons8.com/?size=100&id=D9RtvkuOe31p&format=png&color=000000" class="w-5 h-5" />
+  ${video.authors[0].verified==true ? '<img src="https://img.icons8.com/?size=100&id=D9RtvkuOe31p&format=png&color=000000" class="w-5 h-5" />' :""}
   </div>
   <p>${video.others.views}</p>
   </div>
