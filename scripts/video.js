@@ -1,4 +1,12 @@
 console.log('Somrat')
+function getTimeString(time) {
+    const hour = parseInt(time / 3600);
+    const minutes = time % 3600
+    const minute = parseInt(minutes / 60);
+    const seconds = minutes % 60
+    const second = seconds;
+    return `${hour} hour ${minute} minute ${second} second ago`;
+  }
 //  fetch,load,show
 
 
@@ -26,10 +34,13 @@ const card = document.createElement('div');
 card.classList="card card-compact"
 card.innerHTML=
 `
-  <figure class="h-[200px]">
+  <figure class="h-[200px] relative">
     <img
       src=${video.thumbnail}
       class="h-full w-full object-cover"/>
+
+    ${video.others.posted_date?.length == 0 ? "" : `<span class="absolute text-white right-2 bottom-2 bg-black rounded  p-2 text-xs">${getTimeString(video.others.posted_date)}</span>` 
+        }
   </figure>
   <div class="px-0 py-2 flex gap-2">
   <div>
